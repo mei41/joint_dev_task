@@ -6,7 +6,7 @@ def q1
 
   # 以下に回答を記載
 names.push("斎藤")
-p names
+p names 
 end
 
 def q2
