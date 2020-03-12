@@ -54,7 +54,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  puts array.map!(&:to_i)
+  p array.map{|x| x.to_i}
 end
 
 def q8
@@ -72,9 +72,9 @@ def q9
 
   # 以下に回答を記載
 names.each.with_index(1) do |user, i|
-  puts "会員No#{i} #{user}さん"
+  puts "会員No.#{i} #{user}さん"
+  end
 end
-
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
