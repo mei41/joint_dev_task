@@ -92,9 +92,8 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports2 = sports.flatten
-  sports2.uniq!.each.with_index(1) do |text, i|
-    puts "No#{i} #{text}"
+  sports.flatten.uniq.each.with_index(1) do |sport, index|
+    puts "No#{index} #{sport}"
     end
 end
 
@@ -110,9 +109,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-user_data[:age] = 32
-user_data[:address] = "沖縄"
-p user_data
+p user_data.update(update_data)
 end
 
 def q14
@@ -128,9 +125,14 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+data3 = data1.merge(data2)
+  if data3.include? (:age)
+    puts "OK"
+    else
+      puts "NG"
+    end
+  end
   
-end
-
 def q16
   users = [
     { name: "satou", age: 22 },
@@ -140,7 +142,8 @@ def q16
   ]
 
   # 以下に回答を記載
-
+  users.map {|h| [h["name"],h["age"]]}.to_h
+    puts "私の名前は#{:name}です。年齢は#{:age}歳です。"
 end
 
 class UserQ17
