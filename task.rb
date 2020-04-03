@@ -142,12 +142,43 @@ def q16
   ]
 
   # 以下に回答を記載
-  users.map {|h| [h["name"],h["age"]]}.to_h
-    puts "私の名前は#{:name}です。年齢は#{:age}歳です。"
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
 end
 
 class UserQ17
   # 以下に回答を記載
+  attr_reader :name, :age, :gender, :admin
+
+  def initialize(params)
+    @name = ["名前"]
+    @age = ["年齢"]
+    @gender = ["性別"]
+    @admin = ["管理者権限"]
+  end
+
+  def info
+  user1 = "{@name}:あじー, {@age}32, {@gender}男, {@admin}無し"
+  user2 = "{@name}:あじー, {@age}32, {@gender}男, {@admin}無し"
+  end
+
+  
+  def name
+    @name
+  end
+
+  def age
+    @age
+  end
+
+  def gender
+    @gender
+  end
+
+  def admin
+    @admin
+  end
 
 end
 
